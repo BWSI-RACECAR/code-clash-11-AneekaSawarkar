@@ -42,7 +42,43 @@ class Solution:
         # return type: int
 
         # TODO: Write code below to return an int with the solution to the prompt
+        
+        min_price_1 = 100000
+        profit_1 = []
+        max_profit_1 = 0
 
+        for x in prices:
+            if min_price_1 > x:
+                min_price_1 = x
+            else:
+                max_profit_1 = max(max_profit_1, x - min_price_1)
+        
+            profit_1.append(max_profit_1)
+        
+        max_price_2 = 0
+        profit_2 = [0]*len(prices)
+        max_profit_2 = 0
+
+        for i in range(len(prices)-1, -1, -1):
+            x = prices[i]
+            if x > max_price_2:
+                max_price_2 = x
+            else:
+                max_profit_2 = max(max_profit_2, max_price_2 - x)
+            
+            profit_2[i] = max_profit_2
+
+        max_profit = 0
+        for i in range(len(prices)): 
+            sum_profit = profit_1[i] + profit_2[i]
+            if sum_profit > max_profit:
+                max_profit = sum_profit
+    
+        return max_profit 
+
+
+
+        '''
         # Test Case #1 
         prev = 0 
         i = 0
@@ -88,6 +124,7 @@ class Solution:
         final_string += " - 1 = "
         final_string += str(profit)
         return final_string
+        '''
 
         pass
 
