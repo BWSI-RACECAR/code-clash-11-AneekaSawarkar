@@ -46,37 +46,40 @@ class Solution:
         # Test Case #1 
         prev = 0 
         i = 0
+        count_1 = 0
         while i < len(prices):
             if prices[i] > prev:
-                count += 1 
+                count_1 += 1 
             prev = prices[i]
             i += 1
         
-        if count == len(prices)-1:
+        if count_1 == len(prices)-1:
             return prices[i-1] - prices[0]
 
         #Test Case #2
         previous = 0 
         x = 0
+        count_2 = 0
         while x > len(prices):
             if prices[x] < previous:
-                count += 1 
+                count_2 += 1 
             previous = prices[x]
             x += 1
         
-        if count == len(prices)-1:
+        if count_2 == len(prices)-1:
             return "DO NOT BUY"
 
         #Test Case 3
         prev_1 = 0 
         n = 0
+        count_3 = 0
         while n < len(prices):
             if prices[n] > prev_1:
-                count += 1
+                count_3 += 1
             else:
                 return n
             n += 1
-            
+
         profit = n - 1
         final_string = "Buy during hour 1, sell during hour "
         final_string += str(n)
