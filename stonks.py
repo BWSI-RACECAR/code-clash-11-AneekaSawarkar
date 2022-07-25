@@ -84,7 +84,7 @@ class Solution:
         final_string = "Buy during hour 1, sell during hour "
         final_string += str(n)
         final_string += ", net profit = "
-        fina_string += str(n) 
+        final_string += str(n) 
         final_string += " - 1 = "
         final_string += str(profit)
         return final_string
