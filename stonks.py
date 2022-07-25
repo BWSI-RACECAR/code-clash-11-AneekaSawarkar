@@ -50,6 +50,7 @@ class Solution:
             if prices[i] > prev:
                 count += 1 
             prev = prices[i]
+            i += 1
         
         if count == len(prices)-1:
             return prices[i-1] - prices[0]
@@ -61,6 +62,7 @@ class Solution:
             if prices[x] < previous:
                 count += 1 
             previous = prices[x]
+            x += 1
         
         if count == len(prices)-1:
             return "DO NOT BUY"
@@ -73,6 +75,8 @@ class Solution:
                 count += 1
             else:
                 return n
+            n += 1
+            
         profit = n - 1
         final_string = "Buy during hour 1, sell during hour "
         final_string += str(n)
